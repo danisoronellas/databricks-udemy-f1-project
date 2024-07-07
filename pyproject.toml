@@ -6,13 +6,16 @@ authors = ["Dani Soronellas <daniel.soronellas@gmail.com>"]
 readme = "README.md"
 packages = [{include = "src"}]
 
+[tool.poetry.scripts]
+test-conn = "src.cli:app"
+
 [tool.poetry.dependencies]
 python = "^3.11"
 databricks-sdk = "^0.29.0"
 pyspark = "^3.5.1"
 databricks-connect = "~14.3"
 python-dotenv = "^1.0.1"
-
+importlib-metadata = "4.8.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
@@ -20,6 +23,8 @@ isort = "^5.13.2"
 mypy = "^1.10.1"
 flake8 = "^7.1.0"
 autoflake = "^2.3.1"
+typer = "^0.12.3"
+pre-commit = "^3.7.1"
 
 [build-system]
 requires = ["poetry-core"]
